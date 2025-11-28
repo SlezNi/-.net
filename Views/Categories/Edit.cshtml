@@ -1,0 +1,16 @@
+@model MyWebApp.Models.Category
+@{
+    ViewData["Title"] = "Редагувати категорію";
+}
+<h2>Редагувати категорію</h2>
+<form method="post" enctype="multipart/form-data">
+    <div><label>Назва</label><br /><input name="Name" value="@Model.Name" /></div>
+    <div>
+        @if(!string.IsNullOrEmpty(Model.ImagePath)){
+            <img src="@Model.ImagePath" style="width:120px;height:120px;object-fit:cover;margin:6px;border:1px solid #ddd" /><br/>
+            <label><input type="checkbox" name="deleteImage" value="true" /> Видалити зображення</label>
+        }
+    </div>
+    <div><label>Завантажити нове зображення</label><br /><input type="file" name="image" /></div>
+    <div style="margin-top:12px"><button class="btn" type="submit">Зберегти</button></div>
+</form>

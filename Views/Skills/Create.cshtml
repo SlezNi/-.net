@@ -1,0 +1,11 @@
+@model MyWebApp.Models.Skill
+@{
+    ViewData["Title"] = "Додати навичку";
+}
+<h2>Додати навичку</h2>
+<form method="post">
+    <input type="hidden" name="PersonId" value="@Model.PersonId" />
+    <div><label>Назва</label><br /><input name="Name" /></div>
+    <div><label>Рівень (0-100)</label><br /><input type="number" name="Level" min="0" max="100" /></div>
+    <div style="margin-top:12px"><button class="btn" type="submit">Додати</button></div>
+</form>

@@ -1,0 +1,28 @@
+@model MyWebApp.Models.Product
+@{
+    ViewData["Title"] = "Редагувати продукт";
+}
+<h2>Редагувати продукт</h2>
+<form method="post" enctype="multipart/form-data">
+    <div><label>Назва</label><br /><input name="Name" value="@Model.Name" /></div>
+    <div><label>Опис</label><br /><textarea name="Description">@Model.Description</textarea></div>
+    <div><label>Ціна</label><br /><input type="number" step="0.01" name="Price" value="@Model.Price" /></div>
+    <div><label>Категорія</label><br />
+        <select name="CategoryId">
+            <option value="">--</option>
+            @foreach(var c in ViewBag.Categories as List<MyWebApp.Models.Category> ?? new())}
+        </select>
+    </div>
+    <div>
+        <h4>Існуючі зображення</h4>
+        @foreach(var img in Model.Images){
+            <div style="display:inline-block;text-align:center;margin:6px">
+                <img src="@img.ImagePath" style="width:120px;height:120px;object-fit:cover;border:1px solid #ddd" /><br/>
+                <label><input type="checkbox" name="deleteImageIds" value="@img.Id" /> Видалити</label><br/>
+                <label><input type="radio" name="setMainImageId" value="@img.Id" @(img.IsMain?"checked":"") /> Головне</label>
+            </div>
+        }
+    </div>
+    <div><label>Додати зображення</label><br /><input type="file" name="newImages" multiple /></div>
+    <div style="margin-top:12px"><button class="btn" type="submit">Зберегти</button></div>
+</form>

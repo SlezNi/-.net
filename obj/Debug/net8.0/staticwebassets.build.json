@@ -1,0 +1,39 @@
+{
+  "Version": 1,
+  "Hash": "kaNalbqmZJqSqzBlJw1ZZF95+9D7pfEP9oaS1BoaQZY=",
+  "Source": "MyWebApp",
+  "BasePath": "_content/MyWebApp",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "MyWebApp\\wwwroot",
+      "Source": "MyWebApp",
+      "ContentRoot": "D:\\PR\\MyWebApp_cherry_\\wwwroot\\",
+      "BasePath": "_content/MyWebApp",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "D:\\PR\\MyWebApp_cherry_\\wwwroot\\images\\profiles\\default.png",
+      "SourceId": "MyWebApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\PR\\MyWebApp_cherry_\\wwwroot\\",
+      "BasePath": "_content/MyWebApp",
+      "RelativePath": "images/profiles/default.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\profiles\\default.png"
+    }
+  ]
+}

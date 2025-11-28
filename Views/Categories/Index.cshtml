@@ -1,0 +1,22 @@
+@model IEnumerable<MyWebApp.Models.Category>
+@{
+    ViewData["Title"] = "Категорії";
+}
+<h2>Категорії</h2>
+<p><a class="btn" href="/Categories/Create">Додати категорію</a></p>
+<table>
+    <thead><tr><th>Назва</th><th></th></tr></thead>
+    <tbody>
+    @foreach(var c in Model){
+        <tr>
+            <td>@c.Name</td>
+            <td>
+                <a class="btn" href="/Categories/Edit/@c.Id">Редагувати</a>
+                <form method="post" action="/Categories/Delete/@c.Id" style="display:inline">
+                    <button type="submit">Видалити</button>
+                </form>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

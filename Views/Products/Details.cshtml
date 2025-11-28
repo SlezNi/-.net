@@ -1,0 +1,14 @@
+@model MyWebApp.Models.Product
+@{
+    ViewData["Title"] = "Деталі продукту";
+}
+<h2>@Model.Name</h2>
+<p>@Model.Description</p>
+<p>Ціна: @Model.Price</p>
+<p>Категорія: @Model.Category?.Name</p>
+<div>
+    @foreach(var img in Model.Images){
+        <img src="@img.ImagePath" style="width:120px;height:120px;object-fit:cover;margin:6px;border:1px solid #ddd" />
+    }
+</div>
+<p><a href="/Products" class="btn">Повернутися до списку продуктів</a></p>

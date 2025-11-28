@@ -1,0 +1,26 @@
+@model MyWebApp.Models.Person
+@{
+    ViewData["Title"] = "Редагувати профіль";
+}
+<h2>Редагувати профіль</h2>
+<form method="post" enctype="multipart/form-data">
+    <div>
+        <label>Ім'я</label><br />
+        <input name="FirstName" value="@Model.FirstName" />
+    </div>
+    <div>
+        <label>Прізвище</label><br />
+        <input name="LastName" value="@Model.LastName" />
+    </div>
+    <div>
+        <label>Про себе</label><br />
+        <textarea name="Bio">@Model.Bio</textarea>
+    </div>
+    <div>
+        <label>Фото</label><br />
+        <input type="file" name="profileImage" />
+    </div>
+    <div style="margin-top:12px">
+        <button class="btn" type="submit">Зберегти</button>
+    </div>
+</form>

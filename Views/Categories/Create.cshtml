@@ -1,0 +1,10 @@
+@model MyWebApp.Models.Category
+@{
+    ViewData["Title"] = "Створити категорію";
+}
+<h2>Створити категорію</h2>
+<form method="post" enctype="multipart/form-data">
+    <div><label>Назва</label><br /><input name="Name" /></div>
+    <div><label>Зображення</label><br /><input type="file" name="image" /></div>
+    <div style="margin-top:12px"><button class="btn" type="submit">Створити</button></div>
+</form>

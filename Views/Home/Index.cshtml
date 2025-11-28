@@ -1,0 +1,25 @@
+@model MyWebApp.Models.Person
+@{
+    ViewData["Title"] = "Про мене";
+}
+<div style="display:flex;gap:20px;align-items:center">
+    <div>
+        <img src="@(Model?.ProfileImagePath ?? "/images/profiles/default.png")" alt="Profile" style="width:160px;height:160px;object-fit:cover;border-radius:12px;border:1px solid #ddd" />
+    </div>
+    <div>
+        <h2>@Model?.FirstName @Model?.LastName</h2>
+        <p>@Model?.Bio</p>
+        <p><a class="btn" href="/People/Edit/@Model?.Id">Редагувати профіль</a></p>
+    </div>
+</div>
+<h3>Навички</h3>
+@if(Model?.Skills?.Any() ?? false){
+    <ul>
+    @foreach(var s in Model.Skills){
+        <li>@s.Name — @s.Level%</li>
+    }
+    </ul>
+    <a class="btn" href="/Skills/Index?personId=@Model.Id">Керувати навичками</a>
+} else {
+    <p>Навичок ще немає. <a class="btn" href="/Skills/Index?personId=@Model.Id">Додати</a></p>
+}

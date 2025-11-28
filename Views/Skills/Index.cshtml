@@ -1,0 +1,24 @@
+@model MyWebApp.Models.Person
+@{
+    ViewData["Title"] = "Навички";
+}
+<h2>Навички — @Model.FirstName @Model.LastName</h2>
+<p><a class="btn" href="/Skills/Create?personId=@Model.Id">Додати навичку</a></p>
+<table>
+    <thead><tr><th>Назва</th><th>Рівень</th><th></th></tr></thead>
+    <tbody>
+    @foreach(var s in Model.Skills){
+        <tr>
+            <td>@s.Name</td>
+            <td>@s.Level%</td>
+            <td>
+                <a class="btn" href="/Skills/Edit/@s.Id">Редагувати</a>
+                <form method="post" action="/Skills/Delete/@s.Id" style="display:inline">
+                    <button type="submit">Видалити</button>
+                </form>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
+<p><a href="/">Повернутись</a></p>
